@@ -51,4 +51,15 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    ret = 0
+    for i, number in enumerate(board):
+
+        if number == 0: number = 9
+
+        expect_row, expect_col = (number-1)//3, (number-1)%3
+        actual_row, actual_col = i//3, i%3
+
+        if expect_row != actual_row: ret += 1
+        if expect_col != actual_col: ret += 1
+
+    return ret
