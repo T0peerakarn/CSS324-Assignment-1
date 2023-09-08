@@ -38,15 +38,13 @@ def successors(s):
             yield ((x, y + z, 0), z)
 
     tz = 3 - z
-    # x -> z
     if tz > 0 and x > 0:
         if x > tz:
             yield ((x - tz, y, 3), tz)
         else:
-            yield ((0, y, z - x), x)
-    # y -> z
+            yield ((0, y, z + x), x)
     if tz > 0 and y > 0:
         if y > tz:
             yield ((x, y - tz, 3), tz)
         else:
-            yield ((x, 0, z - y), y)
+            yield ((x, 0, z + y), y)
