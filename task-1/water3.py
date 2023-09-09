@@ -21,4 +21,4 @@ def successors(s):
             d = [0, 0, 0]
             d[i], d[j] = -t, t
 
-            yield ((s[0] + d[0], s[1] + d[1], s[2] + d[2]), t)
+            yield (tuple([s[k] + d[k] for k in range(3)]), t)
